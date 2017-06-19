@@ -16,6 +16,17 @@ class GunGame():
         sleep(500)
         display.show("1")
 
+        while(playing):
+            buttons = self.handle_buttons()
+            display.scroll(buttons)
+
+    def handle_buttons(self)
+        if button_a.is_pressed():
+            display.show("A")
+
+        if button_b.is_pressed():
+            display.show("B")
+
 
 game = GunGame()
 
