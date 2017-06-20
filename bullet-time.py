@@ -8,6 +8,7 @@ class GunGame():
     def startGame(self):
 
         playing = True
+        winner = ""
 
         display.clear()
         display.show("3")
@@ -17,14 +18,17 @@ class GunGame():
         display.show("1")
 
         while(playing):
-            self.handle_buttons()
+            if button_a.is_pressed():
+                winner = "A"
+                display.show(Image.ARROW_W)
+                playing = False
 
-    def handle_buttons(self):
-        if button_a.is_pressed():
-            display.show("A")
+            if button_b.is_pressed():
+                winner = "B"
+                display.show(Image.ARROW_E)
+                playing = False
 
-        if button_b.is_pressed():
-            display.show("B")
+        display.scroll("Winner is " + winner)
 
 
 game = GunGame()
